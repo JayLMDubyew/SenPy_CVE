@@ -46,6 +46,8 @@ SenPy.py [--i CSV_data_file]
 Don't put double quotes around string values.
 
 [general]
+
+
 uwu - Boolean. sets uwu mode
 
 serious - Boolean. sets serious mode. Will override April fool's UwU mode
