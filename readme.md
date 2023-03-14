@@ -7,24 +7,26 @@ Then SenPy might help you!
 CVSS is great for describing the characteristics of a vulnerability. However, it's a relatively static set of characteristics.
 If you're working with ornery folks who are sick of you knocking down their door to get vulnerabilities fixed, you know how it goes.
 
-SenPy is not reinventing the wheel. There's people out there who are smarter than I am, with more resources, mature processes, and man hours to commit to creating a mature and useful set of data. 
-SenPy takes this data, applies it to findings, 
+SenPy is not reinventing the wheel. There's people out there who are smarter than I am, with more resources, mature processes, and man-hours to commit to creating a mature and useful set of data. 
+SenPy takes this data, and then applies it to findings.
 
 # What Senpy Does
 ### CVE Data Enrichment 
 - Takes file input and performs data enrichment based for vulnerabilities based off of four feeds:
   - CISA Known Exploited Vulnerabilities (KEV)
     - https://www.cisa.gov/known-exploited-vulnerabilities-catalog
-  - EPSS Probability Score >=.50 (default)
+  - EPSS Probability Score >=.10 (default)
     - https://www.first.org/epss/
   - CVE Trends over the last 7 days
+    - https://cvetrends.com
+    - Note: CVEtrends data changes frequently, so information such as github repo data may not persist between updates.
   - Kenna (Optional. Requires Kenna VI+ subscription.) 
     - https://www.kennasecurity.com
     - Kenna chatter metrics for applicable vulns
     - Items marked as meeting all three of the criteria below:
       - actively breached
       - easily exploitable
-      - Kenna Score is >= 67 (Red Meter)
+      - Kenna Score is >= 34 (Amber Meter)
 - Data enrichment data will, by default, only update if it has been more than 24 hours since it was last refreshed.
   - In order to override this, enter the following under the "general" stanza in config.ini:
     - _aggressive_enrichment = True_

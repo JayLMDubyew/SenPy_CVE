@@ -46,7 +46,7 @@ def check_and_init_csv_file(fields, path) -> None:
         csvwriter.writerow(fields)
 
 
-def get_data(kenna_api_key="", kenna_base_url="", aggressive_update=False, EPSS_score=0.50, cvetrends_span="7days",
+def get_data(kenna_api_key="", kenna_base_url="", aggressive_update=False, EPSS_score=0.10, cvetrends_span="7days",
              csv_mode=False, kenna_mode=False) -> str:
     if do_we_need_an_update(aggressive_update, csv_mode, kenna_mode):
         vulners = defaultdict(defaultdict)
@@ -77,7 +77,7 @@ def get_data(kenna_api_key="", kenna_base_url="", aggressive_update=False, EPSS_
             vulners[vuln["cveID"]]['CISA'] = 1
 
         if kenna_mode:
-            url = f"{kenna_base_url}/vulnerability_definitions/cve_identifiers?minimal_risk_score=67" \
+            url = f"{kenna_base_url}/vulnerability_definitions/cve_identifiers?minimal_risk_score=34" \
                   f"&active_internet_breach=true&easily_exploitable=true "
             headers = {
                 "accept": "application/json",
