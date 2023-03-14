@@ -61,10 +61,13 @@ finding_csv_output = Boolean. Output Enriched Finding data as CSV output. JSON o
   - Output will only contain Host, Port, and CVE data. If you want more information, such as info from your scanner, use fancy_csv_output
   - Finding data must have the first column set to ip, the second to the port that the finding was found on, or else SenPy will flip out.
 
+
 fancy_csv_output = Boolean. For use with scanner output if you want to append finding data to fields from scanner output such as Qualys or Tenable.
   - Column order does not matter, however, if you have multiple CVEs on one line due to your scanning using a single plugin for multiple CVES (I'm looking at you, Tenable), then output will one line per CVE. This is intended behavior, but it may cause duplicate lines depending on how you feed data into SenPy.
 
+
 [kenna_config]
+
 url = String. Your Kenna base URL here.
 
 api_key = String. Your Kenna API Keys here. 
