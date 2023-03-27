@@ -31,8 +31,6 @@ SenPy takes this data, and then applies it to findings.
   - In order to override this, enter the following under the "general" stanza in config.ini:
     - _aggressive_enrichment = True_
 
-### Vulnerability Finding data enrichment 
-- Senpy can take enrichment 
 ### Usage
 SenPy.py [--i CSV_data_file]
 - CSV data file is optional if you want SenPy to perform enrichment against findings.
